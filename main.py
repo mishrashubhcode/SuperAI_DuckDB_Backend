@@ -24,11 +24,7 @@ cloudinary.config(
 )
 
 app = Flask(__name__)
-cors = CORS(app, origins=[
-    "https://super-ai-duckdb.vercel.app",
-    "http://localhost:5173",  # allow local dev too, optional
-    "http://localhost:3000"
-], supports_credentials=True)
+cors = CORS(app,origins="*")
 
 @app.route('/', methods=['GET'])
 def home():
