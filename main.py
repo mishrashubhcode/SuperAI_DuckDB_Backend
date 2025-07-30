@@ -32,6 +32,7 @@ def home():
 
 # Route for uploading files
 @app.route('/upload_file', methods=['POST'])
+@app.route('/upload_file/', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
         return jsonify({"error": "File Not Found."}), 400
